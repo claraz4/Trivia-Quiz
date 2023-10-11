@@ -1,9 +1,10 @@
 import React from "react";
 import "../styles.css";
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import categoriesData from "../categoriesData";
 
 export default function QuizSettings() {
+    // Getting the category for the url
     const { category } = useParams();
     let categoryName;
 
@@ -11,6 +12,32 @@ export default function QuizSettings() {
         if (obj.id === parseInt(category)) {
             categoryName = obj.name;
         }
+    }
+
+    // Setting up the states
+    const [formData, setFormData] = React.useState({
+        "categoryId" : category,
+        "categoryName" : categoryName,
+        "questions" : 0 ,
+        "difficulty" : "",
+        "type" : ""
+    });
+
+    // Handle the change of any state
+    function handleChange(event) {
+        setFormData(prevData => {
+            return {
+                ...prevData,
+                [event.target.name]: event.target.value
+            }
+        });
+    };
+
+    // Handle submit button click
+    const navigate = useNavigate();
+    function handleSubmit(event) {
+        event.preventDefault();
+        navigate('/quiz', {state:{formData}});
     }
     
     return (
@@ -24,25 +51,27 @@ export default function QuizSettings() {
                 <p>{categoryName}</p>
             </div>
 
-            <form>
-                <label htmlFor="integerInput">Number of questions: </label>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="questions">Number of questions: </label>
                 <br />
                 <input 
                     type="number" 
-                    id="integerInput" 
-                    name="integerInput" 
+                    id="questions" 
+                    name="questions" 
                     min="1" 
                     step="1" 
                     max="50" 
                     className="button"
+                    onChange={handleChange}
                 />
                 <br />
                 <label htmlFor="difficulty">Select the difficulty: </label>
                 <br />
                 <select
-                    id="category"
-                    name="categoryName"
+                    id="difficulty"
+                    name="difficulty"
                     className="button"
+                    onChange={handleChange}
                 >
                     <option value="any">Any difficulty</option>
                     <option value="easy">Easy</option>
@@ -54,11 +83,12 @@ export default function QuizSettings() {
                 <br />
                 <select
                     id="type"
-                    name="typeName"
+                    name="type"
                     className="button"
+                    onChange={handleChange}
                 >
                     <option value="any">Any type</option>
-                    <option value="mcq">Multiple Choice</option>
+                    <option value="multiple">Multiple Choice</option>
                     <option value="boolean">True and False</option>
                 </select>
                 <br />

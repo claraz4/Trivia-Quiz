@@ -6,7 +6,6 @@ body {
     font-size: 16px;
     font-family: "Albert Sans";
     margin: 0;
-    padding: 35px 30px 35px 30px;
     background-color: var(--light-blue);
     color: white;
 }
@@ -17,8 +16,9 @@ body {
 }
 
 .page--container {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    padding: 35px 30px 35px 30px;
 }
 
 .button {
@@ -195,16 +195,41 @@ body {
 }
 
 #type > option,
-#category > option {
+#difficulty > option {
     color: var(--light-blue);
 }
 
-#integerInput,
-#category, 
+#questions,
+#difficulty, 
 #type {
     margin: 10px 0 10px 0;
 }
 
 #type {
     margin-bottom: 30px;
+}
+
+
+/* LOADING SPINNER */
+.spinner {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 7px rgba(0,0,0,0.2) solid;
+    border-top: 7px white solid;
+    animation: spin 1.5s cubic-bezier(0.45,0.2,0.5,0.5) infinite;
+    background-color: var(--lightblue);
+    position: absolute;
+    top: 46%;
+    right: 45%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
