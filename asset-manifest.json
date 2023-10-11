@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Trivia-Quiz/static/css/main.bde015a9.css",
+    "main.js": "/Trivia-Quiz/static/js/main.9960fe14.js",
+    "static/js/787.dddbe7b4.chunk.js": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js",
+    "static/media/nature-icon.png": "/Trivia-Quiz/static/media/nature-icon.1f99a1873b0722b85af7.png",
+    "static/media/theatre-icon.png": "/Trivia-Quiz/static/media/theatre-icon.b0c06c0b2d7536163327.png",
+    "static/media/board-games-icon.png": "/Trivia-Quiz/static/media/board-games-icon.c0ff88505b36af0471d3.png",
+    "static/media/math-icon.png": "/Trivia-Quiz/static/media/math-icon.a712f9605048276bde8a.png",
+    "static/media/music-icon.png": "/Trivia-Quiz/static/media/music-icon.7fa18f47e96586383d1e.png",
+    "static/media/film-icon.png": "/Trivia-Quiz/static/media/film-icon.57e8440b04b8b231e363.png",
+    "static/media/general-knowledge-icon.png": "/Trivia-Quiz/static/media/general-knowledge-icon.3a36387106570d2d756c.png",
+    "static/media/computers-icon.png": "/Trivia-Quiz/static/media/computers-icon.ffa3e0dd754dc923e50b.png",
+    "static/media/television-icon.png": "/Trivia-Quiz/static/media/television-icon.8b3d71c92c7c396509d4.png",
+    "static/media/books-icon.png": "/Trivia-Quiz/static/media/books-icon.78d51bf27f31e1a2f3d6.png",
+    "static/media/video-games-icon.png": "/Trivia-Quiz/static/media/video-games-icon.554ae5b5fd5fbd2ba1aa.png",
+    "index.html": "/Trivia-Quiz/index.html",
+    "main.bde015a9.css.map": "/Trivia-Quiz/static/css/main.bde015a9.css.map",
+    "main.9960fe14.js.map": "/Trivia-Quiz/static/js/main.9960fe14.js.map",
+    "787.dddbe7b4.chunk.js.map": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bde015a9.css",
+    "static/js/main.9960fe14.js"
+  ]
+}
