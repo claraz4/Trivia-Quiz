@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Trivia-Quiz/static/css/main.bde015a9.css",
-    "main.js": "/Trivia-Quiz/static/js/main.9960fe14.js",
+    "main.js": "/Trivia-Quiz/static/js/main.ed173063.js",
     "static/js/787.dddbe7b4.chunk.js": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js",
     "static/media/nature-icon.png": "/Trivia-Quiz/static/media/nature-icon.1f99a1873b0722b85af7.png",
     "static/media/theatre-icon.png": "/Trivia-Quiz/static/media/theatre-icon.b0c06c0b2d7536163327.png",
@@ -16,11 +16,11 @@
     "static/media/video-games-icon.png": "/Trivia-Quiz/static/media/video-games-icon.554ae5b5fd5fbd2ba1aa.png",
     "index.html": "/Trivia-Quiz/index.html",
     "main.bde015a9.css.map": "/Trivia-Quiz/static/css/main.bde015a9.css.map",
-    "main.9960fe14.js.map": "/Trivia-Quiz/static/js/main.9960fe14.js.map",
+    "main.ed173063.js.map": "/Trivia-Quiz/static/js/main.ed173063.js.map",
     "787.dddbe7b4.chunk.js.map": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bde015a9.css",
-    "static/js/main.9960fe14.js"
+    "static/js/main.ed173063.js"
   ]
 }
