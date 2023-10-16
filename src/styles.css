@@ -23,11 +23,11 @@ body {
 }
 
 .button {
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: white;
     color: var(--light-blue);
     width: 100%;
-    height: 40px;
+    height: 50px;
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -35,12 +35,15 @@ body {
     border: none;
     padding: 6px;
     font-weight: 600;
+    font-size: 1rem;
+    font-family: "Albert Sans";
 }
 
 .button:hover {
     background-color: transparent;
     border: 2px white solid;
     color: white;
+    cursor: pointer;
 }
 
 
@@ -295,6 +298,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
+    margin-bottom: 25px;
 }
 
 #timer {
@@ -333,4 +337,22 @@ body {
     z-index: 12;
     border-radius: 50%;
     border: 6px white solid;
+}
+
+#btn-answer {
+    background-color: transparent;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    padding: 22px;
+    border: 1.5px rgba(10, 10, 10, 0.15) solid;
+    color: black;
+    font-weight: 500;
+}
+
+#btn-answer:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+#btn-submit {
+    margin-top: 40px;
 }

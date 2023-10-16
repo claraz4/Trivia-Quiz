@@ -56,7 +56,12 @@ export default function Quiz(props) {
 
         options = answers.map(((a, idx) => {
             return (
-                <p key={idx} className="answer-container">{a}</p>
+                <button 
+                    key={idx} 
+                    className="button" 
+                    id="btn-answer"
+                    type="button"
+                >{a}</button>
             );
         }));
     }
@@ -146,7 +151,7 @@ export default function Quiz(props) {
                     <div className="quiz--answers-container">
                         {options}
                     </div>
-                    <button className="button" onClick={handleClick}>{currentQuestion === parseInt(totalQuestions) ? "Finish" : "Next"}</button>
+                    <button className="button" id="btn-submit" onClick={handleClick}>{currentQuestion === parseInt(totalQuestions) ? "Finish" : "Next"}</button>
                 </div>
             }
         </div>
