@@ -1,10 +1,15 @@
 import React from "react";
 import categoriesData from "../categoriesData";
 import { Link } from "react-router-dom";
+import coinImg from "../images/coin-icon.png";
 import "../styles.css";
 
 export default function Home() {
     const categories = categoriesData.map((category, idx) => {
+        const name = category.name.indexOf(":") !== -1 ?
+        category.name.substring(category.name.indexOf(":") + 2) :
+        category.name;
+
         return (
             <Link to={`/quiz-settings/${category.id}`} key={idx} id="category-box">
                 <img 
@@ -13,7 +18,7 @@ export default function Home() {
                     width="90"
                     height="90"
                 />
-                <h4>{category.name}</h4>
+                <h4>{name}</h4>
             </Link>
         )
     });
@@ -31,7 +36,7 @@ export default function Home() {
             </div>
             
             <div className="home--points-container">
-                <img alt="Points" />
+                <img src={coinImg} alt="Points" />
                 <div className="home--points-text">
                     <p>Points</p>
                     <h4>1209</h4>

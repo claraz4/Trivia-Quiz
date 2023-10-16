@@ -57,67 +57,67 @@ const categories = [
     {
     "id": 20,
     "name": "Mythology",
-    "icon" : "books-icon.png"
+    "icon" : "mythology-icon.png"
     },
     {
     "id": 21,
     "name": "Sports",
-    "icon" : "books-icon.png"
+    "icon" : "sports-icon.png"
     },
     {
     "id": 22,
     "name": "Geography",
-    "icon" : "books-icon.png"
+    "icon" : "geography-icon.png"
     },
     {
     "id": 23,
     "name": "History",
-    "icon" : "books-icon.png"
+    "icon" : "history-icon.png"
     },
     {
     "id": 24,
     "name": "Politics",
-    "icon" : "books-icon.png"
+    "icon" : "politics-icon.png"
     },
     {
     "id": 25,
     "name": "Art",
-    "icon" : "books-icon.png"
+    "icon" : "art-icon.png"
     },
     {
     "id": 26,
     "name": "Celebrities",
-    "icon" : "books-icon.png"
+    "icon" : "celebrity-icon.png"
     },
     {
     "id": 27,
     "name": "Animals",
-    "icon" : "books-icon.png"
+    "icon" : "animals-icon.png"
     },
     {
     "id": 28,
     "name": "Vehicles",
-    "icon" : "books-icon.png"
+    "icon" : "vehicles-icon.png"
     },
     {
     "id": 29,
     "name": "Entertainment: Comics",
-    "icon" : "books-icon.png"
+    "icon" : "comics-icon.png"
     },
     {
     "id": 30,
     "name": "Science: Gadgets",
-    "icon" : "books-icon.png"
+    "icon" : "gadgets-icon.png"
     },
     {
     "id": 31,
     "name": "Entertainment: Japanese Anime & Manga",
-    "icon" : "books-icon.png"
+    "icon" : "mangas-icon.png"
     },
     {
     "id": 32,
     "name": "Entertainment: Cartoon & Animations",
-    "icon" : "books-icon.png"
+    "icon" : "cartoons-icon.png"
     }
 ];
 
