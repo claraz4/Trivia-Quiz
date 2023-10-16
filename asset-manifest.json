@@ -1,26 +1,40 @@
 {
   "files": {
-    "main.css": "/Trivia-Quiz/static/css/main.8af27012.css",
-    "main.js": "/Trivia-Quiz/static/js/main.45575c30.js",
+    "main.css": "/Trivia-Quiz/static/css/main.914d4069.css",
+    "main.js": "/Trivia-Quiz/static/js/main.34a17351.js",
     "static/js/787.dddbe7b4.chunk.js": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js",
+    "static/media/mythology-icon.png": "/Trivia-Quiz/static/media/mythology-icon.701a577c92897e15b23c.png",
     "static/media/nature-icon.png": "/Trivia-Quiz/static/media/nature-icon.1f99a1873b0722b85af7.png",
-    "static/media/theatre-icon.png": "/Trivia-Quiz/static/media/theatre-icon.b0c06c0b2d7536163327.png",
+    "static/media/sports-icon.png": "/Trivia-Quiz/static/media/sports-icon.e06d44b7e4219265e105.png",
+    "static/media/mangas-icon.png": "/Trivia-Quiz/static/media/mangas-icon.bfeebb1047e4b30080ee.png",
+    "static/media/coin-icon.png": "/Trivia-Quiz/static/media/coin-icon.84cf06a861a4cfb9ad42.png",
     "static/media/board-games-icon.png": "/Trivia-Quiz/static/media/board-games-icon.c0ff88505b36af0471d3.png",
+    "static/media/theatre-icon.png": "/Trivia-Quiz/static/media/theatre-icon.20b86bbc1ebe382bddb4.png",
     "static/media/math-icon.png": "/Trivia-Quiz/static/media/math-icon.a712f9605048276bde8a.png",
+    "static/media/geography-icon.png": "/Trivia-Quiz/static/media/geography-icon.1e451326b06f3aed92e2.png",
+    "static/media/art-icon.png": "/Trivia-Quiz/static/media/art-icon.73fe264702ea1367766a.png",
     "static/media/music-icon.png": "/Trivia-Quiz/static/media/music-icon.7fa18f47e96586383d1e.png",
+    "static/media/comics-icon.png": "/Trivia-Quiz/static/media/comics-icon.fbb09bd60eeb1147e9f9.png",
+    "static/media/vehicles-icon.png": "/Trivia-Quiz/static/media/vehicles-icon.640b408d9af6f271df84.png",
+    "static/media/celebrity-icon.png": "/Trivia-Quiz/static/media/celebrity-icon.99693005b6f02447a60e.png",
     "static/media/film-icon.png": "/Trivia-Quiz/static/media/film-icon.57e8440b04b8b231e363.png",
     "static/media/general-knowledge-icon.png": "/Trivia-Quiz/static/media/general-knowledge-icon.3a36387106570d2d756c.png",
+    "static/media/animals-icon.png": "/Trivia-Quiz/static/media/animals-icon.2527b704dc9f5638711a.png",
     "static/media/computers-icon.png": "/Trivia-Quiz/static/media/computers-icon.ffa3e0dd754dc923e50b.png",
     "static/media/television-icon.png": "/Trivia-Quiz/static/media/television-icon.8b3d71c92c7c396509d4.png",
     "static/media/books-icon.png": "/Trivia-Quiz/static/media/books-icon.78d51bf27f31e1a2f3d6.png",
     "static/media/video-games-icon.png": "/Trivia-Quiz/static/media/video-games-icon.554ae5b5fd5fbd2ba1aa.png",
+    "static/media/history-icon.png": "/Trivia-Quiz/static/media/history-icon.d096f7071d376231b138.png",
+    "static/media/cartoons-icon.png": "/Trivia-Quiz/static/media/cartoons-icon.5eeedd3ecc89271a54a1.png",
+    "static/media/gadgets-icon.png": "/Trivia-Quiz/static/media/gadgets-icon.43537b4cd6f8cc3a036c.png",
+    "static/media/politics-icon.png": "/Trivia-Quiz/static/media/politics-icon.5950e4f403f2f2258812.png",
     "index.html": "/Trivia-Quiz/index.html",
-    "main.8af27012.css.map": "/Trivia-Quiz/static/css/main.8af27012.css.map",
-    "main.45575c30.js.map": "/Trivia-Quiz/static/js/main.45575c30.js.map",
+    "main.914d4069.css.map": "/Trivia-Quiz/static/css/main.914d4069.css.map",
+    "main.34a17351.js.map": "/Trivia-Quiz/static/js/main.34a17351.js.map",
     "787.dddbe7b4.chunk.js.map": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8af27012.css",
-    "static/js/main.45575c30.js"
+    "static/css/main.914d4069.css",
+    "static/js/main.34a17351.js"
   ]
 }
