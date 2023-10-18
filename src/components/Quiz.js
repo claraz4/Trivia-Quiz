@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles.css";
+import htmlSymbols from "../htmlSymbols";
 import { useLocation, Link } from "react-router-dom";
 
 export default function Quiz(props) {
@@ -14,6 +15,9 @@ export default function Quiz(props) {
     const totalQuestions = formData.questions;
     const [progress, setProgress] = React.useState("");
     const [timeLeft, setTimeLeft] = React.useState(maxTime);
+    const [displayCorrect, setDisplayCorrect] = React.useState(false);
+    const [points, setPoints] = React.useState(0);
+    const [buttonClicked, setButtonClicked] = React.useState(-1);
 
     // Form the link to submit to the Trivia API
     const questions = `amount=${formData.questions}`;
@@ -38,76 +42,131 @@ export default function Quiz(props) {
         }
     }, [questionsData]);
 
-    // Handle the rendering of the questions
-    // Handle the &quot; for "
-    let question;
-    let answers;
-    let options;
-    if (!isLoading && !error) {
-        question = questionsData.results[currentQuestion - 1];
 
-        // Create the answers rendering array
-        if (question.type === "boolean") {
-            answers = ["True", "False"]; 
-        } else {
-            answers = [...question.incorrect_answers];
-            answers.push(question.correct_answer);
+    // Questions and answers
+    const [question, setQuestion] = React.useState();
+    const [answers, setAnswers] = React.useState([]);
+    const [options, setOptions] = React.useState([]); 
+
+    // Set the question we're at once there is no error, no loading and every time the current question was updated
+    React.useEffect(() => {
+        if (!isLoading && !error) {
+            setQuestion(questionsData.results[currentQuestion - 1]);
         }
+    }, [currentQuestion, isLoading, error]);
 
-        options = answers.map(((a, idx) => {
-            return (
-                <button 
-                    key={idx} 
-                    className="button" 
-                    id="btn-answer"
-                    type="button"
-                >{a}</button>
-            );
-        }));
-    }
+    // Create the answers array
+    React.useEffect(() => {
+        if (question !== undefined) {
+            if (question.type === "boolean") {
+                setAnswers(["True", "False"]); 
+            } else {
+                const corrected = question.incorrect_answers.map((q) => fixSymbols(q));
+                setAnswers([...corrected, fixSymbols(question.correct_answer)].sort(() => 0.5 - Math.random()));
+            }
+        }
+    }, [question]);
 
-    // Handle the button click
-    function handleClick(event) {
+    // Create the options rendering array and shuffle the options
+    React.useEffect(() => {
+        let style;
+        setOptions(answers.map((a, idx) => {
+                if (question !== undefined && displayCorrect && a === question.correct_answer) {
+                    style = " btn-correct";
+                } else if (idx === buttonClicked) {
+                    style = " btn-incorrect";
+                } else {
+                    style = "";
+                }
+               
+                return (
+                    <button 
+                        key={idx} 
+                        className={`button${style}`}
+                        id="btn-answer" 
+                        type="button"
+                        value={question !== undefined && a === question.correct_answer ? "correct": "incorrect"}
+                        onClick={(e) => handleClickOptions(e, idx)}
+                    >
+                    {a}
+                    </button>
+                );
+            }
+        ));
+      }, [answers, displayCorrect, buttonClicked]);
+    
+
+    // Handle the Next button click
+    function handleClickNext(event) {
         event.preventDefault();
-
-        if (currentQuestion !== totalQuestions) {
+        if (currentQuestion !== parseInt(totalQuestions)) {
             // Increment the question number
-            setCurrentQuestion(prevCurr => prevCurr + 1);
+            reset();
             setTimeLeft(maxTime);
         } else {
             // Go to the finishing page
         }
     }
 
+    // Handle the options click
+    function handleClickOptions(event, key) {
+        if (!displayCorrect) {
+            setDisplayCorrect(true);
+            setButtonClicked(key);
+
+            if (event.target.value === "correct") {
+                setPoints(prevPoints => prevPoints + 1);
+            }
+        }
+    }
+
     // Update the progress bar and restart the timer
     React.useEffect(() => {
-        console.log(progress);
         setProgress((currentQuestion * 100 / totalQuestions )+ "%");
     }, [currentQuestion]);
 
     // Create a ref to hold the interval ID
     const interval = React.useRef(null);
 
-    // Start the timer
     React.useEffect(() => {
         clearInterval(interval.current);
         if (!isLoading) {
+            // Start the timer
             interval.current = setInterval(() => {
                 // Decrement the time left by 1
                 setTimeLeft((prevTime) => {
-                    if (prevTime > 0) {
+                    if (buttonClicked !== -1) {
+                        clearInterval(interval.current);
+                        return prevTime; 
+                    } else if (prevTime > 0) {
                         return prevTime - 1;
                     } else {
-                        // Go to the next question and reset the timer
-                        setCurrentQuestion(prevCurr => prevCurr + 1);
+                        // Go to the next question and reset the timer and the displayCorrect
+                        reset();
                         clearInterval(interval.current);
                         return maxTime;
                     }
                 });
             }, 1000);
         }
-    }, [currentQuestion, isLoading]);
+    }, [currentQuestion, isLoading, buttonClicked]);
 
+
+    // Reset when going to a new question
+    function reset() {
+        setCurrentQuestion(prevCurr => prevCurr + 1);
+        setDisplayCorrect(false);
+        setButtonClicked(-1);
+    }
+
+    // Replace the HTML symbols by their values
+    function fixSymbols(s) {
+        const keys = Object.keys(htmlSymbols);
+        for (let i = 0; i < keys.length; i++) {
+            s = s.replaceAll(keys[i], htmlSymbols[keys[i]]);
+        }
+        return s;
+    }
 
     return (
         <div className="page--container">
@@ -125,7 +184,7 @@ export default function Quiz(props) {
             {!isLoading && !error &&
                 <div>
                     <div className="quiz--header">
-                        <div id="btn-close">✕</div>
+                        <Link to={`/quiz-settings/${formData.categoryId}`} id="btn-close">✕</Link>
                         <div className="quiz--status-bar-container">
                             <div id="quiz--status-bar-full">
                                 <div 
@@ -145,13 +204,13 @@ export default function Quiz(props) {
                             <div id="timer">{timeLeft}</div>
                             <div id="timer-bar-progress"></div>
                         </div>
-                        <h4>{question.question}</h4>
+                        <h4>{question && fixSymbols(question.question || "No Question Available")}</h4>
                     </div>
 
                     <div className="quiz--answers-container">
                         {options}
                     </div>
-                    <button className="button" id="btn-submit" onClick={handleClick}>{currentQuestion === parseInt(totalQuestions) ? "Finish" : "Next"}</button>
+                    <button className="button" id="btn-submit" onClick={handleClickNext}>{currentQuestion === parseInt(totalQuestions) ? "Finish" : "Next"}</button>
                 </div>
             }
         </div>

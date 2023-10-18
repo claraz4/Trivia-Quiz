@@ -2,6 +2,7 @@ import React from "react";
 import categoriesData from "../categoriesData";
 import { Link } from "react-router-dom";
 import coinImg from "../images/coin-icon.png";
+import profile from "../images/profile-icon.png";
 import "../styles.css";
 
 export default function Home() {
@@ -30,9 +31,7 @@ export default function Home() {
                     <h1>Welcome back!</h1>
                     <p>Here to challenge your knowledge?</p>
                 </div>
-                <div id="logo">
-
-                </div>
+                <img src={profile} alt="Profile" id="profile" />
             </div>
             
             <div className="home--points-container">

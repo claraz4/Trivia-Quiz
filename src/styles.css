@@ -74,12 +74,12 @@ body {
     justify-content: space-between;
 }
 
-#logo {
-    border-radius: 50%;
-    background-color: black;
+#profile {
     height: 50px;
     width: 50px;
-    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
+    border: 1px white solid;
 }
 
 #header-text > h1 {
@@ -255,6 +255,7 @@ body {
     justify-content: center;
     align-items: center;
     color: var(--dark-blue);
+    text-decoration: none;
 }
 
 .quiz--status-bar-container,
@@ -267,7 +268,7 @@ body {
     padding: 0 10px 0 10px;
     border-radius: 20px;
     justify-content: space-between;
-    width: 72vw;
+    width: 74vw;
 }
 
 #quiz--status-bar-full,
@@ -349,10 +350,21 @@ body {
     font-weight: 500;
 }
 
-#btn-answer:hover {
+#btn-answer:hover,
+#btn-close:hover {
     background-color: rgba(0,0,0,0.05);
 }
 
 #btn-submit {
     margin-top: 40px;
+}
+
+.btn-correct {
+    background-color: rgba(54, 148, 54, 0.6) !important;
+    border: 2px rgb(54, 148, 54) solid !important;
+}
+
+.btn-incorrect {
+    background-color: rgba(248, 59, 59, 0.6) !important;
+    border: 2px rgb(176, 55, 55) solid !important;
 }
