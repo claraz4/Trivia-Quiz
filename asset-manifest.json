@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Trivia-Quiz/static/css/main.c86327a9.css",
-    "main.js": "/Trivia-Quiz/static/js/main.1d5fdacf.js",
+    "main.css": "/Trivia-Quiz/static/css/main.770f385f.css",
+    "main.js": "/Trivia-Quiz/static/js/main.cee13743.js",
     "static/js/787.dddbe7b4.chunk.js": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js",
     "static/media/mythology-icon.png": "/Trivia-Quiz/static/media/mythology-icon.701a577c92897e15b23c.png",
     "static/media/nature-icon.png": "/Trivia-Quiz/static/media/nature-icon.1f99a1873b0722b85af7.png",
@@ -9,6 +9,7 @@
     "static/media/mangas-icon.png": "/Trivia-Quiz/static/media/mangas-icon.bfeebb1047e4b30080ee.png",
     "static/media/coin-icon.png": "/Trivia-Quiz/static/media/coin-icon.84cf06a861a4cfb9ad42.png",
     "static/media/board-games-icon.png": "/Trivia-Quiz/static/media/board-games-icon.c0ff88505b36af0471d3.png",
+    "static/media/profile-icon.png": "/Trivia-Quiz/static/media/profile-icon.44c0213ed1a70c25312c.png",
     "static/media/theatre-icon.png": "/Trivia-Quiz/static/media/theatre-icon.20b86bbc1ebe382bddb4.png",
     "static/media/math-icon.png": "/Trivia-Quiz/static/media/math-icon.a712f9605048276bde8a.png",
     "static/media/geography-icon.png": "/Trivia-Quiz/static/media/geography-icon.1e451326b06f3aed92e2.png",
@@ -29,12 +30,12 @@
     "static/media/gadgets-icon.png": "/Trivia-Quiz/static/media/gadgets-icon.43537b4cd6f8cc3a036c.png",
     "static/media/politics-icon.png": "/Trivia-Quiz/static/media/politics-icon.5950e4f403f2f2258812.png",
     "index.html": "/Trivia-Quiz/index.html",
-    "main.c86327a9.css.map": "/Trivia-Quiz/static/css/main.c86327a9.css.map",
-    "main.1d5fdacf.js.map": "/Trivia-Quiz/static/js/main.1d5fdacf.js.map",
+    "main.770f385f.css.map": "/Trivia-Quiz/static/css/main.770f385f.css.map",
+    "main.cee13743.js.map": "/Trivia-Quiz/static/js/main.cee13743.js.map",
     "787.dddbe7b4.chunk.js.map": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c86327a9.css",
-    "static/js/main.1d5fdacf.js"
+    "static/css/main.770f385f.css",
+    "static/js/main.cee13743.js"
   ]
 }
