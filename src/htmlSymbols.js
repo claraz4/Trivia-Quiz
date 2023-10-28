@@ -160,7 +160,9 @@ const symbols = {
     "&thetasym;" : "ϑ",
     "&upsih;" : "ϒ",
     "&piv;" : "ϖ",
-    "&#039;" : "'"
+    "&#039;" : "'",
+    "&ldquo;" : '"',
+    "&rdquo;" : '"'
 };  
 
 export default symbols;

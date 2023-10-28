@@ -1,13 +1,15 @@
 import React from "react";
 import "../styles.css";
 import htmlSymbols from "../htmlSymbols";
+import QuizEnd from "./QuizEnd";
 import { useLocation, Link } from "react-router-dom";
 
 export default function Quiz(props) {
-    const maxTime = 20;
+    const maxTime = 15;
 
     const location = useLocation();
     const formData = location.state.formData;
+
     const [questionsData, setQuestionsData] = React.useState({});
     const [error, setError] = React.useState(false);
     const [isLoading, setIsLoading] = React.useState(true);
@@ -18,6 +20,7 @@ export default function Quiz(props) {
     const [displayCorrect, setDisplayCorrect] = React.useState(false);
     const [points, setPoints] = React.useState(0);
     const [buttonClicked, setButtonClicked] = React.useState(-1);
+    const [endQuiz, setEndQuiz] = React.useState(false);
 
     // Form the link to submit to the Trivia API
     const questions = `amount=${formData.questions}`;
@@ -71,7 +74,7 @@ export default function Quiz(props) {
     React.useEffect(() => {
         let style;
         setOptions(answers.map((a, idx) => {
-                if (question !== undefined && displayCorrect && a === question.correct_answer) {
+                if (question !== undefined && displayCorrect && a === fixSymbols(question.correct_answer)) {
                     style = " btn-correct";
                 } else if (idx === buttonClicked) {
                     style = " btn-incorrect";
@@ -105,8 +108,16 @@ export default function Quiz(props) {
             setTimeLeft(maxTime);
         } else {
             // Go to the finishing page
+            setEndQuiz(true);
         }
     }
+
+    // Handle the reach of the end of the quiz
+    React.useEffect(() => {
+        if (currentQuestion > totalQuestions) {
+            setEndQuiz(true);
+        }
+    }, [currentQuestion])
 
     // Handle the options click
     function handleClickOptions(event, key) {
@@ -181,7 +192,7 @@ export default function Quiz(props) {
                 </div>
             }
                 
-            {!isLoading && !error &&
+            {!endQuiz && !isLoading && !error &&
                 <div>
                     <div className="quiz--header">
                         <Link to={`/quiz-settings/${formData.categoryId}`} id="btn-close">✕</Link>
@@ -212,6 +223,13 @@ export default function Quiz(props) {
                     </div>
                     <button className="button" id="btn-submit" onClick={handleClickNext}>{currentQuestion === parseInt(totalQuestions) ? "Finish" : "Next"}</button>
                 </div>
+            }
+
+            {endQuiz && 
+                <QuizEnd 
+                    points={points}
+                    totalQuestions={totalQuestions}
+                />
             }
         </div>
     );
