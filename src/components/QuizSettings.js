@@ -46,54 +46,56 @@ export default function QuizSettings() {
                 to={`/`}
                 className="button btn-goback"
             > &lt; Go back</Link>
-            <div className="settings--category-title">
-                <h2>Category:</h2>
-                <p>{categoryName}</p>
-            </div>
+            <div className="settings--container">
+                <div className="settings--category-title">
+                    <h2>Category:</h2>
+                    <p>{categoryName}</p>
+                </div>
 
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="questions">Number of questions: </label>
-                <br />
-                <input 
-                    type="number" 
-                    id="questions" 
-                    name="questions" 
-                    min="1" 
-                    step="1" 
-                    max="50" 
-                    className="button"
-                    onChange={handleChange}
-                />
-                <br />
-                <label htmlFor="difficulty">Select the difficulty: </label>
-                <br />
-                <select
-                    id="difficulty"
-                    name="difficulty"
-                    className="button"
-                    onChange={handleChange}
-                >
-                    <option value="any">Any difficulty</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
-                <br />
-                <label htmlFor="type">Select the type of questions: </label>
-                <br />
-                <select
-                    id="type"
-                    name="type"
-                    className="button"
-                    onChange={handleChange}
-                >
-                    <option value="any">Any type</option>
-                    <option value="multiple">Multiple Choice</option>
-                    <option value="boolean">True and False</option>
-                </select>
-                <br />
-                <button className="button">Start!</button>
-            </form>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="questions">Number of questions: </label>
+                    <br />
+                    <input 
+                        type="number" 
+                        id="questions" 
+                        name="questions" 
+                        min="1" 
+                        step="1" 
+                        max="50" 
+                        className="button"
+                        onChange={handleChange}
+                    />
+                    <br />
+                    <label htmlFor="difficulty">Select the difficulty: </label>
+                    <br />
+                    <select
+                        id="difficulty"
+                        name="difficulty"
+                        className="button"
+                        onChange={handleChange}
+                    >
+                        <option value="any">Any difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <br />
+                    <label htmlFor="type">Select the type of questions: </label>
+                    <br />
+                    <select
+                        id="type"
+                        name="type"
+                        className="button"
+                        onChange={handleChange}
+                    >
+                        <option value="any">Any type</option>
+                        <option value="multiple">Multiple Choice</option>
+                        <option value="boolean">True and False</option>
+                    </select>
+                    <br />
+                    <button className="button">Start!</button>
+                </form>
+            </div>
         </div>
     );
 }

@@ -30,10 +30,23 @@ export default function Quiz(props) {
     const url = "https://opentdb.com/api.php?" + questions + category + difficulty + type;
 
     // Get the questions from the API request
+    // If a problem occurs, set the error to be true
     React.useEffect(() => {
         fetch(url)
-            .then(res => res.json())
-            .then(data => setQuestionsData(data))
+            .then((res) => {
+                if (!res.ok) {
+                    setError(true);
+                    throw new Error(`HTTP error! Status: ${res.status}`);
+                }
+                return res.json();
+            })
+            .then((data) => {
+                setQuestionsData(data);
+            })
+            .catch((error) => {
+                setError(true);
+                console.error('Fetch error:', error);
+            });
     }, [url]);
 
     // Handle the case where there is a reponse code problem
@@ -220,8 +233,8 @@ export default function Quiz(props) {
 
                     <div className="quiz--answers-container">
                         {options}
+                        <button className="button" id="btn-submit" onClick={handleClickNext}>{currentQuestion === parseInt(totalQuestions) ? "Finish" : "Next"}</button>
                     </div>
-                    <button className="button" id="btn-submit" onClick={handleClickNext}>{currentQuestion === parseInt(totalQuestions) ? "Finish" : "Next"}</button>
                 </div>
             }
 

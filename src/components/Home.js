@@ -58,6 +58,9 @@ export default function Home() {
 
     return (
         <div className="page--container">
+        {window.innerWidth < 640
+            && 
+        <div>
             <div className="home--header-container">
                 <div id="header-text">
                     <h1>Welcome back!</h1>
@@ -74,8 +77,32 @@ export default function Home() {
                         <h4>{currentPoints}</h4>
                     </div>
                 </div>
-                <button id="reset-button" title="Reset Points" onClick={handleReset}>⭯</button>
+                <button id="reset-button" title="Reset Points" onClick={handleReset}>&#11119;</button>
             </div>
+        </div>
+        }
+
+        {window.innerWidth >= 640 && 
+            <div className="home--header-container">
+                    <div className="welcome-container">
+                        <img src={profile} alt="Profile" id="profile" />
+                        <div id="header-text">
+                            <h1>Welcome back!</h1>
+                            <p>Here to challenge your knowledge?</p>
+                        </div>
+                    </div>
+                    <div id="points-container">
+                        <button id="reset-button" title="Reset Points" onClick={handleReset}>⭯</button>
+                        <div className="home--points-container">
+                            <img src={coinImg} alt="Points" />
+                            <div className="home--points-text">
+                                <p>Points</p>
+                                <h4>{currentPoints}</h4>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        }
 
             <div className="home--categories-container">
                 <h3>Let's play</h3> 
