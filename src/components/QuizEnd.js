@@ -6,6 +6,7 @@ export default function QuizEnd(props) {
     const [ points ] = React.useState(props.points);
     const ratioCorrect = points / props.totalQuestions;
     let message;
+    localStorage.setItem("added", "false");
 
     if (ratioCorrect > 0.8) {
         message = "Great job!";

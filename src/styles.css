@@ -51,7 +51,8 @@ body {
 .home--points-container,
 .settings--category-title,
 .quiz--header,
-.quiz--status-bar-container {
+.quiz--status-bar-container,
+#points-container {
     display: flex;
     flex-direction: row;
     align-items: center;    
@@ -95,16 +96,20 @@ body {
 }
 
 /* points */
+#points-container {
+    width: 67%;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
 .home--points-container {
     background-color: white;
     border-radius: 20px;
     box-shadow: 3px 3px 25px 3px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    margin: auto;
-    width: 60%;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
     color: var(--dark-blue);
 }
 
@@ -127,6 +132,23 @@ body {
     font-size: 1.3rem;
     font-weight: 700;
     margin: 0;
+}
+
+#reset-button {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.702);
+    font-weight: 200;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    font-family: "Albert Sans";
+}
+
+#reset-button:hover {
+    background-color: transparent;
+    border: 1.5px var(--dark-blue) solid;
+    cursor: pointer;
 }
 
 /* categories */

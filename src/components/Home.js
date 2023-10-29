@@ -6,29 +6,31 @@ import profile from "../images/profile-icon.png";
 import "../styles.css";
 
 export default function Home() {
-    const [prevPoints, setPrevPoints] = React.useState(0);
-
-    // NOT WORKINGGG!! THE POINTS!!
-
     // Get the points from previous rounds if any
     const location = useLocation();
+    const [currentPoints, setCurrentPoints] = React.useState(parseInt(localStorage.getItem("totalPoints")) || 0);
+
+    const state = location.state ? location.state.points : null;
 
     React.useEffect(() => {
-        setPrevPoints(location.state ? location.state.points : 0);
-        console.log("prev1: " + prevPoints);
-    }, [])
-    console.log(parseInt(localStorage.getItem("totalPoints")));
+        if (localStorage.getItem("added") === "false") {
+            const newPoints = state ? parseInt(location.state.points) : 0;
+            setCurrentPoints(prevPoints => prevPoints + newPoints);
+            console.log("points: " + currentPoints);
+            localStorage.setItem("added", "true");
+        }
+    }, [state]);
+
+    React.useEffect(() => {
+        localStorage.setItem("totalPoints", currentPoints.toString());
+    }, [currentPoints])
+
+    // Reset the points
+    function handleReset() {
+        localStorage.removeItem("totalPoints");
+        setCurrentPoints(0);
+    }
     console.log(localStorage.getItem("totalPoints"));
-
-    React.useEffect(() => {
-        const current = parseInt(localStorage.getItem("totalPoints")) || 0;
-        console.log("prev : " + prevPoints);
-        const total = current + prevPoints;
-        console.log("total : " + total);
-
-        localStorage.setItem("totalPoints", total.toString());
-        setPrevPoints(0);
-    }, [prevPoints])
 
     // Get the categories
     const categories = categoriesData.map((category, idx) => {
@@ -64,12 +66,15 @@ export default function Home() {
                 <img src={profile} alt="Profile" id="profile" />
             </div>
             
-            <div className="home--points-container">
-                <img src={coinImg} alt="Points" />
-                <div className="home--points-text">
-                    <p>Points</p>
-                    <h4>{localStorage.getItem("totalPoints")}</h4>
+            <div id="points-container">
+                <div className="home--points-container">
+                    <img src={coinImg} alt="Points" />
+                    <div className="home--points-text">
+                        <p>Points</p>
+                        <h4>{currentPoints}</h4>
+                    </div>
                 </div>
+                <button id="reset-button" title="Reset Points" onClick={handleReset}>⭯</button>
             </div>
 
             <div className="home--categories-container">
