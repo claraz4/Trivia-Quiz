@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Trivia-Quiz/static/css/main.2667c1a1.css",
-    "main.js": "/Trivia-Quiz/static/js/main.d042b8c4.js",
+    "main.css": "/Trivia-Quiz/static/css/main.b37b9686.css",
+    "main.js": "/Trivia-Quiz/static/js/main.115c146c.js",
     "static/js/787.dddbe7b4.chunk.js": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js",
     "static/media/mythology-icon.png": "/Trivia-Quiz/static/media/mythology-icon.701a577c92897e15b23c.png",
     "static/media/nature-icon.png": "/Trivia-Quiz/static/media/nature-icon.1f99a1873b0722b85af7.png",
@@ -31,12 +31,12 @@
     "static/media/gadgets-icon.png": "/Trivia-Quiz/static/media/gadgets-icon.43537b4cd6f8cc3a036c.png",
     "static/media/politics-icon.png": "/Trivia-Quiz/static/media/politics-icon.5950e4f403f2f2258812.png",
     "index.html": "/Trivia-Quiz/index.html",
-    "main.2667c1a1.css.map": "/Trivia-Quiz/static/css/main.2667c1a1.css.map",
-    "main.d042b8c4.js.map": "/Trivia-Quiz/static/js/main.d042b8c4.js.map",
+    "main.b37b9686.css.map": "/Trivia-Quiz/static/css/main.b37b9686.css.map",
+    "main.115c146c.js.map": "/Trivia-Quiz/static/js/main.115c146c.js.map",
     "787.dddbe7b4.chunk.js.map": "/Trivia-Quiz/static/js/787.dddbe7b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2667c1a1.css",
-    "static/js/main.d042b8c4.js"
+    "static/css/main.b37b9686.css",
+    "static/js/main.115c146c.js"
   ]
 }
