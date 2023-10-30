@@ -1,8 +1,9 @@
 import React from "react";
 import categoriesData from "../categoriesData";
 import { Link, useLocation } from "react-router-dom";
-import coinImg from "../images/coin-icon.png";
-import profile from "../images/profile-icon.png";
+import coinImg from "../images/coin-icon.webp";
+import profile from "../images/profile-icon.webp";
+import resetSymbol from "../images/arrow.webp";
 import "../styles.css";
 
 export default function Home() {
@@ -42,7 +43,7 @@ export default function Home() {
             <Link 
                 to={`/quiz-settings/${category.id}`} 
                 key={idx} 
-                id="category-box"
+                className="category-box"
 
             >
                 <img 
@@ -66,18 +67,20 @@ export default function Home() {
                     <h1>Welcome back!</h1>
                     <p>Here to challenge your knowledge?</p>
                 </div>
-                <img src={profile} alt="Profile" id="profile" />
+                <img src={profile} alt="Profile" id="profile" width="50px" height="50px" />
             </div>
             
             <div id="points-container">
                 <div className="home--points-container">
-                    <img src={coinImg} alt="Points" />
+                    <img src={coinImg} alt="Points" width="45px" height="45px" />
                     <div className="home--points-text">
                         <p>Points</p>
                         <h4>{currentPoints}</h4>
                     </div>
                 </div>
-                <button id="reset-button" title="Reset Points" onClick={handleReset}>&#11119;</button>
+                <button id="reset-button" title="Reset Points" onClick={handleReset}>
+                    <img src={resetSymbol} alt="Reset" width="25px" height="25px" />
+                </button>
             </div>
         </div>
         }
@@ -85,16 +88,18 @@ export default function Home() {
         {window.innerWidth >= 640 && 
             <div className="home--header-container">
                     <div className="welcome-container">
-                        <img src={profile} alt="Profile" id="profile" />
+                        <img src={profile} alt="Profile" id="profile" width="50px" height="50px" />
                         <div id="header-text">
                             <h1>Welcome back!</h1>
                             <p>Here to challenge your knowledge?</p>
                         </div>
                     </div>
                     <div id="points-container">
-                        <button id="reset-button" title="Reset Points" onClick={handleReset}>⭯</button>
+                        <button id="reset-button" title="Reset Points" onClick={handleReset}>
+                            <img src={resetSymbol} alt="Reset" width="25px" height="25px" />
+                        </button>
                         <div className="home--points-container">
-                            <img src={coinImg} alt="Points" />
+                            <img src={coinImg} alt="Points" width="45px" height="45px" />
                             <div className="home--points-text">
                                 <p>Points</p>
                                 <h4>{currentPoints}</h4>

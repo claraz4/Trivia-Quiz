@@ -162,7 +162,9 @@ const symbols = {
     "&piv;" : "ϖ",
     "&#039;" : "'",
     "&ldquo;" : '"',
-    "&rdquo;" : '"'
+    "&rdquo;" : '"',
+    "&rsquo;" : "'",
+    "&lsquo;" : "'"
 };  
 
 export default symbols;

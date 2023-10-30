@@ -61,7 +61,7 @@ body {
 
 /* FLEX - COLUMN */
 .home--points-text,
-#category-box,
+.category-box,
 #end-results {
     display: flex;
     flex-direction: column;
@@ -77,8 +77,6 @@ body {
 }
 
 #profile {
-    height: 50px;
-    width: 50px;
     border-radius: 50%;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
     border: 1px white solid;
@@ -115,7 +113,6 @@ body {
 }
 
 .home--points-container > img {
-    width: 45px;
     margin-right: 30px;
 }
 
@@ -137,13 +134,13 @@ body {
 
 #reset-button {
     background-color: white;
-    color: rgba(0, 0, 0, 0.702);
     font-weight: 200;
     font-size: 2rem;
     border-radius: 15px;
     border: none;
-    padding: 5px 10px 5px 10px;
-    font-family: "Albert Sans";
+    padding: 12px;
+    display: flex;
+    justify-content: center;
 }
 
 #reset-button:hover {
@@ -170,7 +167,7 @@ body {
     grid-column-gap: 10vw;
 }
 
-#category-box {
+.category-box {
     background-color: white;
     border-radius: 10px;
     margin: 10px 15px 10px 0;
@@ -182,19 +179,19 @@ body {
     text-decoration: none;
 }
 
-#category-box > h4 {
+.category-box > h4 {
     margin: 0;
     font-weight: 600;
     text-wrap: wrap;
     align-self: flex-start;
 }
 
-#category-box > img {
+.category-box > img {
     filter: drop-shadow(-10px 5px 3px rgba(0, 0, 0, 0.2));
     margin-bottom: 25px;
 }
 
-#category-box:hover {
+.category-box:hover {
     background-color: transparent;
     border: 2px white solid;
 }
