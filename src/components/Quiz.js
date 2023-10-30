@@ -29,25 +29,29 @@ export default function Quiz(props) {
     const type = (formData.type === "any" || formData.type ==="") ? "" : `&type=${formData.type}`;
     const url = "https://opentdb.com/api.php?" + questions + category + difficulty + type;
 
-    // Get the questions from the API request
-    // If a problem occurs, set the error to be true
+    // Check the network connection
+    const [online, setOnline] = React.useState(navigator.onLine);
+    const [eventAdded, setEventAdded] = React.useState(false);
+
+    const updateOnlineStatus = () => {
+        setOnline(navigator.onLine);
+    };
+
     React.useEffect(() => {
-        fetch(url)
-            .then((res) => {
-                if (!res.ok) {
-                    setError(true);
-                    throw new Error(`HTTP error! Status: ${res.status}`);
-                }
-                return res.json();
-            })
-            .then((data) => {
-                setQuestionsData(data);
-            })
-            .catch((error) => {
-                setError(true);
-                console.error('Fetch error:', error);
-            });
-    }, [url]);
+        console.log("event fired");
+        window.addEventListener("online", updateOnlineStatus);
+        window.addEventListener("offline", updateOnlineStatus);
+        setEventAdded(true);
+    }, []);
+
+    // Get the questions from the API request
+    React.useEffect(() => {
+        if (navigator.onLine) {
+            fetch(url)
+                .then(res => res.json())
+                .then(data => setQuestionsData(data))
+        }
+    }, [url, online]);
 
     // Handle the case where there is a reponse code problem
     React.useEffect(() => {
@@ -68,6 +72,12 @@ export default function Quiz(props) {
     React.useEffect(() => {
         if (!isLoading && !error) {
             setQuestion(questionsData.results[currentQuestion - 1]);
+            if (eventAdded) {
+                console.log("event cleanup")
+                window.removeEventListener("online", updateOnlineStatus);
+                window.removeEventListener("offline", updateOnlineStatus);
+                setEventAdded(false);
+            }
         }
     }, [currentQuestion, isLoading, error]);
 
@@ -195,8 +205,13 @@ export default function Quiz(props) {
     return (
         <div className="page--container">
             {isLoading &&
-                <div className="spinner"></div>
-            }
+                <div id="loading-page">
+                    <div className="spinner"></div>
+                    {!online && 
+                        <p>Trying to connect...</p>
+                    }
+                </div>
+            }   
 
             {!isLoading && error && 
                 <div>
