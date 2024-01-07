@@ -18,7 +18,7 @@ export default function QuizSettings() {
     const [formData, setFormData] = React.useState({
         "categoryId" : category,
         "categoryName" : categoryName,
-        "questions" : 0 ,
+        "questions" : 0,
         "difficulty" : "",
         "type" : ""
     });

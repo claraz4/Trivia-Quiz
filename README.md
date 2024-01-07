@@ -45,7 +45,7 @@ As someone who always want to extend their general knowledge, this project was m
 - Three difficulty levels: easy, medium, and hard.
 - Each question has a 15-second timer.
 
-Learning can becom fun with this interactive Trivia Quiz! Feel free to provide feedback, report any issues, or contribute to its improvement.
+Learning can become fun with this interactive Trivia Quiz! Feel free to provide feedback, report any issues, or contribute to its improvement.
  
 
 ### Built With
